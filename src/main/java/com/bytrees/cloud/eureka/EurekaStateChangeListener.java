@@ -12,25 +12,26 @@ public class EurekaStateChangeListener {
 
     @EventListener
     public void listen(EurekaInstanceCanceledEvent event) {
-        logger.warn("service offline: serverId: {}, appName: {}.", event.getServerId(), event.getAppName());
+        logger.info("service offline: serverId: {}, appName: {}.", event.getServerId(), event.getAppName());
     }
 
     @EventListener
     public void listen(EurekaInstanceRegisteredEvent event) {
-        logger.warn("service register: appName: {}.", event.getInstanceInfo().getAppName());
+        logger.info("service register: appName: {}.", event.getInstanceInfo().getAppName());
     }
 
     @EventListener
     public void listen(EurekaInstanceRenewedEvent event) {
-        logger.warn("service renew: serverId: {}, appName: {}.", event.getServerId(), event.getAppName());
+        logger.info("service renew: serverId: {}, appName: {}.", event.getServerId(), event.getAppName());
     }
+
     @EventListener
     public void listen(EurekaRegistryAvailableEvent event) {
-        logger.warn("eureka registry start.");
+        logger.info("eureka registry start.");
     }
 
     @EventListener
     public void listen(EurekaServerStartedEvent event) {
-        logger.warn("eureka server start.");
+        logger.info("eureka server start.");
     }
 }
